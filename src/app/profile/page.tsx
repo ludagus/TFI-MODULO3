@@ -1,14 +1,39 @@
 import getUserData from '@/actions/getUserData';
 import getUserImage from '@/actions/getUserImage';
+import updateUserSkill from '@/actions/updateUserSkill';
 import { Button } from '@/components/ui/button';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 
 const Profile = async () => {
-  const handleAddSkill = async (formData: FormData) => {};
-
   const userData = await getUserData();
 
+  if(!userData){
+    return redirect('/');
+  }
+
   const userLogo = await getUserImage(userData?.logo!);
+
+  const handleAddSkill = async (formData: FormData) => {
+    'use server';
+
+    const skill = formData.get('skill');
+    
+    if (!skill) return;
+
+    const [formResponse, formError] = await updateUserSkill(
+      userData?.id!, 
+      skill as string
+    );
+
+    if(!formError){
+      console.log(formError);
+      return;
+    }
+   
+    revalidatePath('/profile');
+  };
 
   return (
     <div className='bg-gray-100 min-h-screen'>
@@ -41,7 +66,7 @@ const Profile = async () => {
               </div>
               <hr className='my-6 border-t border-gray-300' />
               <div className='flex flex-col'>
-                <form className='flex'>
+                <form action={handleAddSkill} className='flex'>
                   <input
                     className='border mr-2 rounded-md border-black px-3 py-2'
                     type='text'
@@ -54,11 +79,12 @@ const Profile = async () => {
                   Skills
                 </span>
                 <ul>
-                  <li className='mb-2'>JavaScript</li>
-                  <li className='mb-2'>React</li>
-                  <li className='mb-2'>Node.js</li>
-                  <li className='mb-2'>HTML/CSS</li>
-                  <li className='mb-2'>Tailwind CSS</li>
+                  {userData?.skills.map(skill =>(
+                    <li key={skill} className='mb-2'>
+                      {skill}
+                    </li>
+                  ))}
+                  
                 </ul>
               </div>
             </div>
