@@ -1,7 +1,14 @@
+import getUserData from '@/actions/getUserData';
+import getUserImage from '@/actions/getUserImage';
 import { Button } from '@/components/ui/button';
+
 
 const Profile = async () => {
   const handleAddSkill = async (formData: FormData) => {};
+
+  const userData = await getUserData();
+
+  const userLogo = await getUserImage(userData?.logo!);
 
   return (
     <div className='bg-gray-100 min-h-screen'>
@@ -11,12 +18,12 @@ const Profile = async () => {
             <div className='bg-white shadow rounded-lg p-6'>
               <div className='flex flex-col items-center'>
                 <img
-                  src={''}
+                  src={userLogo}
                   className='w-32 h-32 bg-gray-300 object-cover rounded-full mb-4 shrink-0'
-                  alt={''}
+                  alt={userData?.full_name}
                 />
-                <h1 className='text-xl font-bold'>{''}</h1>
-                <p className='text-gray-700'>{''}</p>
+                <h1 className='text-xl font-bold'>{userData?.full_name}</h1>
+                <p className='text-gray-700'>{userData?.job_title}</p>
                 <div className='mt-6 flex flex-wrap gap-4 justify-center'>
                   <a
                     href='#'
