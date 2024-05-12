@@ -73,7 +73,7 @@ const Profile = async () => {
                     name='skill'
                     placeholder='skill'
                   />
-                  <Button type='submit'>Agregar</Button>
+                  <Button type='submit'>Add</Button>
                 </form>
                 <span className='text-gray-700 uppercase font-bold tracking-wider mb-2'>
                   Habilidades
@@ -92,6 +92,15 @@ const Profile = async () => {
           <div className='col-span-4 sm:col-span-9'>
             <div className='bg-white shadow rounded-lg p-6'>
               <h2 className='text-xl font-bold mb-4'>¡Bienvenidos!</h2>
+{/* Inserta la imagen debajo del párrafo */}
+                <img
+                  src='/images/programador.jpeg'
+                  alt='Imagen de bienvenida'
+                  className='mt-4 rounded-lg shadow-lg mx-auto block'
+                  width={500}
+                  height={300}
+                
+                />
               
               <p className='text-gray-700'>
               En nuestro sitio, conectamos a talentosos desarrolladores con 
@@ -117,6 +126,7 @@ const Profile = async () => {
             <div className='py-4' />
 
             <div className='col-span-4 sm:col-span-9'>
+
               
             </div>
           </div>

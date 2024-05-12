@@ -35,10 +35,10 @@ const CreateProfileModal = () => {
   const formSchema = z.object({
     image: z
       .instanceof(FileList)
-      .refine(file => file?.length == 1, 'Image is required'),
+      .refine(file => file?.length == 1, 'Imagen es requerida'),
     jobtitle: z
       .string()
-      .min(2, { message: 'Job title must be at least 2 characters' }),
+      .min(2, { message: 'El Puesto de Trabajo debe tener al menos 2 caracteres' }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -113,7 +113,7 @@ const CreateProfileModal = () => {
       onOpenChange={toggleCreateProfileModal}
     >
       <DialogContent>
-        <DialogTitle>Set your profile</DialogTitle>
+        <DialogTitle>Configure su Perfi</DialogTitle>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
             <FormField
@@ -121,11 +121,11 @@ const CreateProfileModal = () => {
               name='jobtitle'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Job title</FormLabel>
+                  <FormLabel>Puesto de Trabajo</FormLabel>
                   <FormControl>
-                    <Input placeholder='Job Title' {...field} />
+                    <Input placeholder='Puesto de Trabajo' {...field} />
                   </FormControl>
-                  <FormDescription>Your Job Title</FormDescription>
+                  <FormDescription>Su Puesto de Trabajo</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -146,14 +146,14 @@ const CreateProfileModal = () => {
                       }}
                     />
                   </FormControl>
-                  <FormDescription>Your logo</FormDescription>
+                  <FormDescription>Su foto</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
             <Button type='submit' variant='outline'>
-              Submit
+              Enviar
             </Button>
           </form>
         </Form>
