@@ -35,7 +35,7 @@ const AuthModal = () => {
     email: z
       .string()
       .email()
-      .min(5, { message: 'Job title must be at least 2 characters' }),
+      .min(5, { message: 'El título debe tener al menos 2 caracteres' }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -49,7 +49,7 @@ const AuthModal = () => {
     const response = await registerWithEmailAndPasword(values);
     const {error, data} = JSON.parse(response);
     if (error){
-      console.warn('sign in error', error);
+      console.warn('Error al Loguearse', error);
       return;
     }
   }
@@ -65,12 +65,12 @@ const AuthModal = () => {
 
   return (
     <Dialog open={isAuthModalOpen} onOpenChange={toggleAuthModal}>
-      <DialogContent className='bg-black border-neutral-500'>
+      <DialogContent className='bg-blue border-neutral-500'>
         <DialogHeader className='text-white'>
           <DialogTitle>Authenticate</DialogTitle>
         </DialogHeader>
 
-        <Button>GOOGLE</Button>
+
         <Button onClick={socialAuth.bind(this, 'github')}>GITHUB</Button>
 
         <Form {...form}>
@@ -84,13 +84,13 @@ const AuthModal = () => {
                   <FormControl>
                     <Input placeholder='email' {...field} />
                   </FormControl>
-                  <FormDescription>Please enter your email</FormDescription>
+                  <FormDescription>Por favor, ingrese su email</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button type='submit'>Submit</Button>
+            <Button type='submit'>Enviar</Button>
           </form>
         </Form>
       </DialogContent>

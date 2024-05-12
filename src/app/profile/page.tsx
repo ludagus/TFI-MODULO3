@@ -36,7 +36,7 @@ const Profile = async () => {
   };
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
+    <div className='bg-blue-100 min-h-screen'>
       <div className='container mx-auto py-8'>
         <div className='grid grid-cols-4 sm:grid-cols-12 gap-6 px-4'>
           <div className='col-span-4 sm:col-span-3'>
@@ -54,13 +54,13 @@ const Profile = async () => {
                     href='#'
                     className='bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded'
                   >
-                    Contact
+                    Contacto
                   </a>
                   <a
                     href='#'
                     className='bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded'
                   >
-                    Resume
+                    Currículum
                   </a>
                 </div>
               </div>
@@ -68,15 +68,15 @@ const Profile = async () => {
               <div className='flex flex-col'>
                 <form action={handleAddSkill} className='flex'>
                   <input
-                    className='border mr-2 rounded-md border-black px-3 py-2'
+                    className='border mr-2 rounded-md border-blue px-3 py-2'
                     type='text'
                     name='skill'
                     placeholder='skill'
                   />
-                  <Button type='submit'>Add</Button>
+                  <Button type='submit'>Agregar</Button>
                 </form>
                 <span className='text-gray-700 uppercase font-bold tracking-wider mb-2'>
-                  Skills
+                  Habilidades
                 </span>
                 <ul>
                   {userData?.skills.map(skill =>(
@@ -91,29 +91,25 @@ const Profile = async () => {
           </div>
           <div className='col-span-4 sm:col-span-9'>
             <div className='bg-white shadow rounded-lg p-6'>
-              <h2 className='text-xl font-bold mb-4'>About Me</h2>
+              <h2 className='text-xl font-bold mb-4'>¡Bienvenidos!</h2>
+              
               <p className='text-gray-700'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                finibus est vitae tortor ullamcorper, ut vestibulum velit
-                convallis. Aenean posuere risus non velit egestas suscipit. Nunc
-                finibus vel ante id euismod. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam
-                erat volutpat. Nulla vulputate pharetra tellus, in luctus risus
-                rhoncus id.
+              En nuestro sitio, conectamos a talentosos desarrolladores con 
+              oportunidades emocionantes. ¿Cuál es nuestro objetivo? 
+              ¡Facilitar la búsqueda de talento y fomentar la colaboración! 
+              Aquí, los desarrolladores pueden registrarse, crear sus perfiles
+              y cargar información relevante sobre sus habilidades, experiencia 
+              y proyectos anteriores. Nuestro enfoque es ayudar a las empresas a 
+              encontrar a los candidatos adecuados y a los desarrolladores a 
+              descubrir nuevas oportunidades.
               </p>
-              <h2 className='text-xl font-bold mt-6 mb-4'>Experience</h2>
               <div className='mb-6'>
-                <div className='flex justify-between flex-wrap gap-2 w-full'>
-                  <span className='text-gray-700 font-bold'>Web Developer</span>
-                  <p>
-                    <span className='text-gray-700 mr-2'>at ABC Company</span>
-                    <span className='text-gray-700'>2017 - 2019</span>
-                  </p>
-                </div>
+                
                 <p className='mt-2'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  finibus est vitae tortor ullamcorper, ut vestibulum velit
-                  convallis. Aenean posuere risus non velit egestas suscipit.
+                Además, ofrecemos herramientas de búsqueda avanzada para que 
+                los reclutadores encuentren rápidamente a los profesionales 
+                que necesitan. Así que, si eres un apasionado del código, 
+                ¡únete a nuestra comunidad y muestra al mundo lo que puedes hacer!
                 </p>
               </div>
             </div>
@@ -121,35 +117,7 @@ const Profile = async () => {
             <div className='py-4' />
 
             <div className='col-span-4 sm:col-span-9'>
-              <div className='bg-white shadow rounded-lg p-6'>
-                <h2 className='text-xl font-bold mb-4'>About Me</h2>
-                <p className='text-gray-700'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  finibus est vitae tortor ullamcorper, ut vestibulum velit
-                  convallis. Aenean posuere risus non velit egestas suscipit.
-                  Nunc finibus vel ante id euismod. Vestibulum ante ipsum primis
-                  in faucibus orci luctus et ultrices posuere cubilia Curae;
-                  Aliquam erat volutpat. Nulla vulputate pharetra tellus, in
-                  luctus risus rhoncus id.
-                </p>
-                <h2 className='text-xl font-bold mt-6 mb-4'>Experience</h2>
-                <div className='mb-6'>
-                  <div className='flex justify-between flex-wrap gap-2 w-full'>
-                    <span className='text-gray-700 font-bold'>
-                      Web Developer
-                    </span>
-                    <p>
-                      <span className='text-gray-700 mr-2'>at ABC Company</span>
-                      <span className='text-gray-700'>2017 - 2019</span>
-                    </p>
-                  </div>
-                  <p className='mt-2'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    finibus est vitae tortor ullamcorper, ut vestibulum velit
-                    convallis. Aenean posuere risus non velit egestas suscipit.
-                  </p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

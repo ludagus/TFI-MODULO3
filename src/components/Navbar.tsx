@@ -40,7 +40,7 @@ const Navbar = () => {
   if (!isMounted) return null;
 
   return (
-    <nav className='bg-white border-gray-200'>
+    <nav className='bg-blue border-blue-200'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <Link
           href='/'
@@ -54,17 +54,17 @@ const Navbar = () => {
             <>
             <Link
             href='/profile'
-            className='block text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700'
+            className='block text-blue-900 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700'
           >
-            Profile
+            Perfil
           </Link>
 
           <Button onClick={toggleCreateProfileModal} variant='outline'>
-            Update Profile
+            Actualizar Perfil
           </Button>
 
           <Button onClick={handleSignout} variant='destructive'>
-            Signout
+            Salir
           </Button>
 
           </>
@@ -73,7 +73,7 @@ const Navbar = () => {
           
           {!user &&(
             <Button onClick={toggleAuthModal} variant='destructive'>
-            Auth
+            Login
             </Button>
           )}
 
